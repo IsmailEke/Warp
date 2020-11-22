@@ -32,11 +32,15 @@ class Warp extends PluginBase
 	{
 		MainLogger::getLogger()->notice("Warp Plugin Online");
 		CommandManager::register();
-                @mkdir($this->getDataFolder());
-		self::$warpConfig = new Config($this->getDataFolder() . "warp.yml", Config::YAML);
-		self::$warpConfig->set("Warps", []);
-		self::$warpConfig->save();
-        }
+		if (file_exists($this->getDataFolder() ."warp.yml")) {
+		    self::$warpConfig = new Config($this->getDataFolder() . "warp.yml", Config::YAML);
+		} else {
+		    @mkdir($this->getDataFolder());
+		    self::$warpConfig = new Config($this->getDataFolder() . "warp.yml", Config::YAML);
+		    self::$warpConfig->set("Warps", []);
+		    self::$warpConfig->save();
+		}
+    }
 	
 	public function onDisable ()
 	{
