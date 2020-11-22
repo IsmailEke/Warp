@@ -1,0 +1,5 @@
+name: Warp
+version: 1
+api: 3.15.1
+main: IsmailEke\Warp
+author: IsmailEke
