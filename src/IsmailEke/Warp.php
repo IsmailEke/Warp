@@ -8,7 +8,7 @@
 * GitHub: IsmailEke
 * Poggit: IsmailEke
 * YouTube: İsmail Eke
-* Discord: IsmailEke#0236
+* Discord: IsmailEke#8866
 * Instagram: _ismail.eke
 * Messenger: İsmail Lnd
 *
