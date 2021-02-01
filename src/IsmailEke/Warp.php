@@ -30,6 +30,9 @@ class Warp extends PluginBase
 	
 	public function onEnable ()
 	{
+                foreach(array_diff(scandir($this->getServer()->getDataPath() . "worlds"), ["..", "."]) as $levelName){
+		    $this->getServer()->loadLevel($levelName);
+                }
 		MainLogger::getLogger()->notice("Warp Plugin Online");
 		CommandManager::register();
 		if (file_exists($this->getDataFolder() ."warp.yml")) {
