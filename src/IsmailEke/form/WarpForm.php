@@ -54,6 +54,7 @@ class WarpForm implements Form
 		$x = (int) Warp::$warpConfig->get("Warps")[$this->warpData[$data]]["PositionX"];
 		$y = (int) Warp::$warpConfig->get("Warps")[$this->warpData[$data]]["PositionY"];
 		$z = (int) Warp::$warpConfig->get("Warps")[$this->warpData[$data]]["PositionZ"];
+                Server::getInstance()->loadLevel(Warp::$warpConfig->get("Warps")[$this->warpData[$data]]["Level_Name"]);
 		$level_name = Server::getInstance()->getLevelByName((string) Warp::$warpConfig->get("Warps")[$this->warpData[$data]]["Level_Name"]);
 		$player->teleport(new Position($x, $y, $z, $level_name));
 		$player->sendMessage(TextFormat::GREEN."You teleported to ".$this->warpData[$data]."§a.");
