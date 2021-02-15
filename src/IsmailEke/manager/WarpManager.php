@@ -25,7 +25,7 @@ class WarpManager
 	 * @return int
 	*/
 	
-	public static getWarpCount () : int
+	public static function getWarpCount () : int
 	{
 		return count(self::getWarpName());
 	}
